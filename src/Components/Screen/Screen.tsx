@@ -1,0 +1,38 @@
+import React from "react";
+import { Container } from "./styles";
+
+const sound = new Audio('https://ringtonedownload.best/wp-content/uploads/2021/05/Pikachu-Noshock-Rap-Pikachu-Song-Tone-in-Mp3-Format-.mp3');
+
+export default function Screen() {
+  const handlePlayClick = () => {
+    sound.play();
+  }
+
+  const handleStopClick = () => {
+    sound.pause();
+  }
+
+  return (
+    <Container>
+      <div className="screen-header">
+        <div className="small-btn"></div>
+        <div className="small-btn"></div>
+      </div>
+      <div className="screen-picture">
+        <img draggable="false" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c7e7d0c6-8bc7-42f8-b532-2b9a7ac7b59e/dcer0s0-4ddd0125-4050-44f2-b875-6bc187575c5a.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2M3ZTdkMGM2LThiYzctNDJmOC1iNTMyLTJiOWE3YWM3YjU5ZVwvZGNlcjBzMC00ZGRkMDEyNS00MDUwLTQ0ZjItYjg3NS02YmMxODc1NzVjNWEuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.mNoPzvw7WUZeb9O5YFkKcTerKdXgIas452PV_w9b9WE" alt="" />
+      </div>
+      <div className="screen-footer">
+        <div className="sound-controls">
+          <div className="big-btn" onClick={handlePlayClick}></div>
+          <div className="big-btn" onClick={handleStopClick}></div>
+        </div>
+        <div className="speaker">
+          <div className="sp"></div>
+          <div className="sp"></div>
+          <div className="sp"></div>
+          <div className="sp"></div>
+        </div>
+      </div>
+    </Container>
+  );
+}
