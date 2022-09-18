@@ -1,13 +1,14 @@
+import { PokemonProvider } from '../../context/PokemonContext/PokemonContext';
 import InfoDisplay from '../InfoDisplay/InfoDisplay';
 import Screen from '../Screen/Screen';
 import './App.css';
 
 function App() {
   return (
-    <div>
+    <PokemonProvider>
       {/* <Screen></Screen> */}
       <InfoDisplay />
-    </div>
+    </PokemonProvider>
   );
 }
 

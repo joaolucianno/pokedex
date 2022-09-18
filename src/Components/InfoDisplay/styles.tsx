@@ -16,10 +16,6 @@ export const Container = styled.div`
   width: 300px;
 
   .status {
-    margin-bottom: 10px;
-
-    .property {
-      font-weight: bold;
-    }
+    margin-top: 10px;
   }
 `;

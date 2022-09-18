@@ -7,3 +7,9 @@ export type Pokemon = {
   type: PokemonTypes;
   weight: number;
 }
+
+export type PokeProvider = {
+  pokemonSelected: Pokemon;
+  handlePlusSelector: Function;
+  handleMinusSelector: Function;
+}

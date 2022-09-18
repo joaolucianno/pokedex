@@ -1,36 +1,29 @@
-import { PokemonTypes } from "../../ts/enums/app-enums";
+import { useContext } from "react";
+import { PokemonContext } from "../../context/PokemonContext/PokemonContext";
 import { Pokemon } from "../../ts/types/app-types";
 import { Container } from "./styles";
 
-const pokemon: Pokemon = {
-  height: 15,
-  id: 'string-id',
-  name: 'Pikachu',
-  type: PokemonTypes.ELECTRIC,
-  weight: 20,
-}
-
 export default function InfoDisplay() {
+  const pokemonContext  = useContext(PokemonContext);
+  const pokemonSelected = pokemonContext && pokemonContext?.pokemonSelected;
+
   return (
     <Container>
+      <h2>Pokemon Info</h2>
       <div className="status">
         <div>
-          <span className="property">Name:</span> {pokemon.name}
+          <b>Name:</b> <span style={{textTransform: 'capitalize'}}>{pokemonSelected?.name}</span>
         </div>
         <div>
-          <span className="property">Type:</span> {pokemon.type}
+          <b>Type:</b> {pokemonSelected?.type}
         </div>
         <div>
-          <span className="property">Height:</span> {pokemon.height}m
+          <b>Height:</b> {pokemonSelected?.height}m
         </div>
         <div>
-          <span className="property">Weight:</span> {pokemon.weight}kg
+          <b>Weight:</b> {pokemonSelected?.weight}kg
         </div>
       </div>
-      <div className="description">
-          <b>The duck Pokemon</b> <br />
-          Uses mysterious powers to perform various attacks
-        </div>
     </Container>
   );
 }
