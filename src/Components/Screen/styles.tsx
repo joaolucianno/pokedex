@@ -26,19 +26,22 @@ export const Container = styled.div`
   }
 
   .screen-picture {
+    align-items: center;
     background-color: #fff;
     border: 3px solid #494949;
     border-radius: 15px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     -o-border-radius: 15px;
+    display: flex;
     height: 175px;
+    justify-content: center;
     width: 100%;
     
 
     img {
-      width: 100%;
-      height: 100%;
+      width: 90%;
+      height: 90%;
       object-fit: contain;
       -webkit-touch-callout: none;
     }

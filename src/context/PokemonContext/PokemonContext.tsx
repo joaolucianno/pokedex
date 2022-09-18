@@ -27,7 +27,7 @@ export const PokemonProvider = ({ children }: any) => {
       setPokemonSelected({
         height: response.height,
         id: response.id,
-        mainImage: response?.sprites?.other?.home?.front_default,
+        mainImage: response?.sprites?.other?.dream_world?.front_default,
         name: response.name,
         type: response?.types.map((type: any) => type.type.name),
         weight: response.weight
