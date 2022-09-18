@@ -1,5 +1,4 @@
-import { createContext, useEffect, useLayoutEffect, useState } from "react";
-import { PokemonTypes } from "../../ts/enums/app-enums";
+import { createContext, useCallback, useEffect, useLayoutEffect, useState } from "react";
 import { Pokemon, PokeProvider } from "../../ts/types/app-types";
 
 export const PokemonContext = createContext<PokeProvider | null>(null);
@@ -8,14 +7,13 @@ export const PokemonProvider = ({ children }: any) => {
   const [selector, setSelector] = useState(1);
   const [pokemonSelected, setPokemonSelected] = useState<Pokemon | null>(null);
 
-  const handlePlusSelector = () => {
-    setSelector((prevState) => prevState < 1154 ? ++prevState : prevState);
-  }
+  const handlePlusSelector = useCallback(() => {
+    setSelector((prevState) => prevState < 905 ? ++prevState : prevState)
+  }, []);
 
-  const handleMinusSelector = () => {
-    setSelector((prevState) => prevState > 1 ? --prevState : prevState);
-  }
-
+  const handleMinusSelector = useCallback(() => {
+    setSelector((prevState) => prevState > 1 ? --prevState : prevState)
+  }, []);
 
   useLayoutEffect(() => {
     const fetchPokemon = async () => {
@@ -26,12 +24,12 @@ export const PokemonProvider = ({ children }: any) => {
     
 
     fetchPokemon().then((response) => {
-      console.log('RESPONSE', response.name);
       setPokemonSelected({
         height: response.height,
         id: response.id,
+        mainImage: response?.sprites?.other?.home?.front_default,
         name: response.name,
-        type: PokemonTypes.BUG,
+        type: response?.types.map((type: any) => type.type.name),
         weight: response.weight
       })
     }).catch(console.error)

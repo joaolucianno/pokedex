@@ -5,7 +5,8 @@ import { Container } from "./styles";
 
 export default function InfoDisplay() {
   const pokemonContext  = useContext(PokemonContext);
-  const pokemonSelected = pokemonContext && pokemonContext?.pokemonSelected;
+  const pokemonSelected: Pokemon | null = pokemonContext && pokemonContext?.pokemonSelected;
+  console.log(pokemonSelected);
 
   return (
     <Container>
@@ -15,7 +16,12 @@ export default function InfoDisplay() {
           <b>Name:</b> <span style={{textTransform: 'capitalize'}}>{pokemonSelected?.name}</span>
         </div>
         <div>
-          <b>Type:</b> {pokemonSelected?.type}
+          <b>Type: </b> 
+          <span style={{textTransform: 'capitalize'}}>
+            {pokemonSelected?.type.map((type, index) => {
+              return pokemonSelected?.type.length - 1 === index ? `${type}` : `${type} | `
+            })}
+          </span>
         </div>
         <div>
           <b>Height:</b> {pokemonSelected?.height}m
@@ -23,6 +29,9 @@ export default function InfoDisplay() {
         <div>
           <b>Weight:</b> {pokemonSelected?.weight}kg
         </div>
+        <br />
+        <button onClick={pokemonContext?.handleMinusSelector}>{`<--`}</button> &nbsp;
+        <button onClick={pokemonContext?.handlePlusSelector}>{`-->`}</button>
       </div>
     </Container>
   );
