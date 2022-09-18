@@ -1,7 +1,6 @@
-import React from "react";
 import { Container } from "./styles";
 
-const sound = new Audio('https://ringtonedownload.best/wp-content/uploads/2021/05/Pikachu-Noshock-Rap-Pikachu-Song-Tone-in-Mp3-Format-.mp3');
+const sound = new Audio('https://play.pokemonshowdown.com/audio/cries/pikachu.mp3');
 
 export default function Screen() {
   const handlePlayClick = () => {

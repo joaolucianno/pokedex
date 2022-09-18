@@ -1,11 +1,12 @@
-import React from 'react';
+import InfoDisplay from '../InfoDisplay/InfoDisplay';
 import Screen from '../Screen/Screen';
 import './App.css';
 
 function App() {
   return (
     <div>
-      <Screen></Screen>
+      {/* <Screen></Screen> */}
+      <InfoDisplay />
     </div>
   );
 }
