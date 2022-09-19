@@ -142,5 +142,12 @@ export const Container = styled.div`
         width: 20px;
       }
     }
+
+    :nth-child(even) {
+      :hover {
+        background-color: #222222f2;
+        cursor: pointer;
+      }
+    }
   }
 `;

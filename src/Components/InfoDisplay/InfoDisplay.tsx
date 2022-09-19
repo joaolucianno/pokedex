@@ -6,7 +6,6 @@ import { Container } from "./styles";
 export default function InfoDisplay() {
   const pokemonContext  = useContext(PokemonContext);
   const pokemonSelected: Pokemon | null = pokemonContext && pokemonContext?.pokemonSelected;
-  console.log(pokemonSelected);
 
   return (
     <Container>
@@ -30,8 +29,6 @@ export default function InfoDisplay() {
           <b>Weight:</b> {pokemonSelected?.weight}kg
         </div>
         <br />
-        <button onClick={pokemonContext?.handleMinusSelector}>{`<--`}</button> &nbsp;
-        <button onClick={pokemonContext?.handlePlusSelector}>{`-->`}</button>
       </div>
     </Container>
   );

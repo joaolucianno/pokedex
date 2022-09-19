@@ -7,8 +7,8 @@ import './App.css';
 function App() {
   return (
     <PokemonProvider>
-      {/* <Screen></Screen>
-      <InfoDisplay /> */}
+      <Screen></Screen>
+      <InfoDisplay />
       <ArrowControl />
     </PokemonProvider>
   );

@@ -1,4 +1,4 @@
-import { createContext, useCallback, useEffect, useLayoutEffect, useState } from "react";
+import { createContext, useCallback, useLayoutEffect, useState } from "react";
 import { Pokemon, PokeProvider } from "../../ts/types/app-types";
 
 export const PokemonContext = createContext<PokeProvider | null>(null);
@@ -8,7 +8,7 @@ export const PokemonProvider = ({ children }: any) => {
   const [pokemonSelected, setPokemonSelected] = useState<Pokemon | null>(null);
 
   const handlePlusSelector = useCallback(() => {
-    setSelector((prevState) => prevState < 905 ? ++prevState : prevState)
+    setSelector((prevState) => prevState < 151 ? ++prevState : prevState)
   }, []);
 
   const handleMinusSelector = useCallback(() => {
