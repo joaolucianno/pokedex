@@ -7,9 +7,15 @@ export default function InfoDisplay() {
   const pokemonContext  = useContext(PokemonContext);
   const pokemonSelected: Pokemon | null = pokemonContext && pokemonContext?.pokemonSelected;
 
+  const formatId = (id: string | undefined) => {
+    return id?.length === 1 ? `0${id}` : id;
+  }
+
   return (
     <Container>
-      <h2>Pokemon Info</h2>
+      <header>
+        <h2 className="title-diff">{formatId(pokemonSelected?.id)} - {pokemonSelected?.name}</h2>
+      </header>
       <div className="status">
         <div>
           <b>Name:</b> <span style={{textTransform: 'capitalize'}}>{pokemonSelected?.name}</span>

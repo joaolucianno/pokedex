@@ -15,6 +15,12 @@ export const Container = styled.div`
   padding: 10px;
   width: 300px;
 
+  .title-diff {
+    font-family: 'VT323', monospace;
+    font-size: 1.8rem;
+    text-transform: capitalize;
+  }
+
   .status {
     margin-top: 10px;
   }

@@ -1,4 +1,4 @@
-import { MouseEventHandler } from "react";
+import { KeyboardEventHandler, MouseEventHandler } from "react";
 import { PokemonTypes } from "../enums/app-enums";
 
 export type Pokemon = {
@@ -11,7 +11,8 @@ export type Pokemon = {
 }
 
 export type PokeProvider = {
-  pokemonSelected: Pokemon;
-  handlePlusSelector: MouseEventHandler;
-  handleMinusSelector: MouseEventHandler;
+  pokemonSelected?: Pokemon;
+  handleMinusSelector?: MouseEventHandler;
+  handlePlusSelector?: MouseEventHandler;
+  handleSearch?: any;
 }

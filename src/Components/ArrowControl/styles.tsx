@@ -145,7 +145,7 @@ export const Container = styled.div`
 
     :nth-child(even) {
       :hover {
-        background-color: #222222f2;
+        background-color: #222222d1;
         cursor: pointer;
       }
     }
