@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { KeyboardEvent, useCallback, useContext, useEffect, useState } from "react";
 import SearchIcon from '@mui/icons-material/Search';
 
 import { Container } from "./styles";
@@ -8,9 +8,18 @@ import { PokemonContext } from "../../context/PokemonContext/PokemonContext";
 export default function Search() {
   const pokemonContext = useContext(PokemonContext);
 
-  const onSearch = () => {
+  const handleKeyEnter = (event: any) => {
+    if (event.key === 'Enter') {
+      onSearch();
+    }
+  };
+
+  const handleClickSearch = () => {
+    onSearch();
+  }
+
+  const onSearch =  () => {
     const valueSearched: any = document.querySelector('[name="pokemon-name"]');
-    
     if (!valueSearched?.value) {
       return;
     }
@@ -18,6 +27,13 @@ export default function Search() {
     pokemonContext?.handleSearch(valueSearched?.value);
     valueSearched.value = '';
   }
+
+  useEffect(() => {
+    const valueSearched: any = document.querySelector('[name="pokemon-name"]');
+    valueSearched?.addEventListener('keyup', (event: any) => handleKeyEnter(event));
+    
+    return () => valueSearched?.removeEventListener('keyup', handleKeyEnter);
+  }, [])
 
   return (
     <Container>
@@ -27,7 +43,7 @@ export default function Search() {
         className="pokemon-name" 
         name="pokemon-name"
       />
-      <button className="search-btn" onClick={onSearch}>
+      <button className="search-btn" onClick={handleClickSearch}>
         <SearchIcon style={{color: '#fff'}}/>
       </button>
     </Container>
