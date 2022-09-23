@@ -9,6 +9,7 @@ export const Container = styled.div`
 
   .btn {
     background-color: #222;
+    border-width: 0;
     box-shadow: -3px 2px #010101;
     -webkit-box-shadow: -3px 2px #010101;
     -moz-box-shadow: -3px 2px #010101;

@@ -1,8 +1,9 @@
-import { KeyboardEvent, useCallback, useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import SearchIcon from '@mui/icons-material/Search';
 
 import { Container } from "./styles";
 import { PokemonContext } from "../../context/PokemonContext/PokemonContext";
+import Button from "../Button/Button";
 
 
 export default function Search() {
@@ -43,9 +44,9 @@ export default function Search() {
         className="pokemon-name" 
         name="pokemon-name"
       />
-      <button className="search-btn" onClick={handleClickSearch}>
+      <Button className="search-btn" onClick={handleClickSearch}>
         <SearchIcon style={{color: '#fff'}}/>
-      </button>
+      </Button>
     </Container>
   );
 }

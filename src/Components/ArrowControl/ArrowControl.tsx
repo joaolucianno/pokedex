@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { PokemonContext } from "../../context/PokemonContext/PokemonContext";
+import Button from "../Button/Button";
 import { Container } from "./styles";
 
 export default function ArrowControl() {
@@ -7,21 +8,21 @@ export default function ArrowControl() {
   
   return (
     <Container>
-      <div className="btn">
+      <Button className="btn">
         <div></div>
-      </div>
-      <div className="btn" onClick={pokemonContext?.handlePlusSelector}>
+      </Button>
+      <Button className="btn" onClick={pokemonContext?.handlePlusSelector}>
         <div></div>
-      </div>
-      <div className="btn">
+      </Button>
+      <Button className="btn">
         <div></div>
-      </div>
-      <div className="btn" onClick={pokemonContext?.handleMinusSelector}>
+      </Button>
+      <Button className="btn" onClick={pokemonContext?.handleMinusSelector}>
         <div></div>
-      </div>
-      <div className="btn">
+      </Button>
+      <Button className="btn">
         <div></div>
-      </div>
+      </Button>
     </Container>
   );
 }
