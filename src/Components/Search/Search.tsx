@@ -5,7 +5,6 @@ import { Container } from "./styles";
 import { PokemonContext } from "../../context/PokemonContext/PokemonContext";
 import Button from "../Button/Button";
 
-
 export default function Search() {
   const pokemonContext = useContext(PokemonContext);
 

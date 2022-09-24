@@ -6,6 +6,8 @@ type ButtonShape = {
   children?: React.ReactNode,
 }
 
-export default function Button({ onClick = () => {}, className = '', children }: ButtonShape) {
+const Button: React.FC<ButtonShape> = ({ onClick = () => {}, className = '', children}) => {
   return <button onClick={onClick} className={className}>{children}</button>
-}
+};
+
+export default Button;
