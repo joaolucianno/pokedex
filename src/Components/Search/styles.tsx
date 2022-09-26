@@ -23,6 +23,14 @@ export const Container = styled.div`
     }
   }
 
+  .input-error {
+    outline: 2px solid #f00;
+
+    :focus-visible {
+      outline: 2px solid #f00;
+    }
+  }
+
   .search-btn {
     background: #222;
     border-radius: 5px;

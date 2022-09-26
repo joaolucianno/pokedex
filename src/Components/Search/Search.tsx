@@ -19,8 +19,10 @@ export default function Search() {
   }
 
   const onSearch =  () => {
-    const valueSearched: any = document.querySelector('[name="pokemon-name"]');
+    const valueSearched: HTMLInputElement = document.querySelector('[name="pokemon-name"]');
+
     if (!valueSearched?.value) {
+      valueSearched?.classList?.add('input-error');
       return;
     }
 
@@ -28,11 +30,18 @@ export default function Search() {
     valueSearched.value = '';
   }
 
-  useEffect(() => {
-    const valueSearched: any = document.querySelector('[name="pokemon-name"]');
-    valueSearched?.addEventListener('keyup', (event: any) => handleKeyEnter(event));
+  const removeError = (inputElement: HTMLInputElement) => {
+    if (inputElement?.value?.length > 0) {
+      inputElement?.classList.remove('input-error');
+    }
     
-    return () => valueSearched?.removeEventListener('keyup', handleKeyEnter);
+  }
+
+  useEffect(() => {
+    const valueSearched: HTMLInputElement = document.querySelector('[name="pokemon-name"]');
+    valueSearched?.addEventListener('keyup', handleKeyEnter);
+    
+    return () => {valueSearched?.removeEventListener('keyup', handleKeyEnter)};
   }, [])
 
   return (
@@ -42,6 +51,7 @@ export default function Search() {
         placeholder="Enter a Pokemon..." 
         className="pokemon-name" 
         name="pokemon-name"
+        onChange={(event) => {removeError(event?.target)}}
       />
       <Button className="search-btn" onClick={handleClickSearch}>
         <SearchIcon style={{color: '#fff'}}/>
