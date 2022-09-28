@@ -1,15 +1,21 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin: 50px;
-  background: #ed7165;
-  background: -moz-linear-gradient(top, #ed7165 80%, #67686c 81%);
-  background: -webkit-linear-gradient(top, #ed7165 80%, #67686c 81%);
-  background: linear-gradient(to bottom, #ed7165 80%, #67686c 81%);
+  background: -moz-linear-gradient(top, #a90909d1 80%, #67686c 81%);
+  background: -webkit-linear-gradient(top, #a90909d1 80%, #67686c 81%);
+  background: #a90909d1;
+  background: linear-gradient(to bottom, #a90909d1 80%, #67686c 81%);
   border-radius: 5px;
   display: inline-flex;
-  padding: 5px;
   gap: 5px;
+  max-width: 260px;
+  padding: 5px;
+
+  // Check Style
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 
   .pokemon-name {
     border: none;

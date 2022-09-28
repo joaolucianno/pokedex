@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { PokemonContext } from "../../context/PokemonContext/PokemonContext";
+import { formatId } from "../../utils/Util";
 import { Container } from "./styles";
 
 const sound = new Audio('https://play.pokemonshowdown.com/audio/cries/pikachu.mp3');
@@ -23,6 +24,7 @@ export default function Screen() {
         <div className="small-btn"></div>
       </div>
       <div className="screen-picture">
+        <span className="title">{`${formatId(pokemon?.id)}- ${pokemon?.name}`}</span>
         <img draggable="false" src={pokemon?.mainImage} alt="" />
       </div>
       <div className="screen-footer">

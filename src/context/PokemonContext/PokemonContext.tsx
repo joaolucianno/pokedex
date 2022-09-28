@@ -1,10 +1,10 @@
 import { createContext, useCallback, useEffect, useRef, useState } from "react";
 import { PokemonAssembler } from "../../assemblers/pokemon/pokemon-assembler";
 import { Pokemon, PokeProvider } from "../../ts/types/app-types";
-import { Util } from "../../utils/Util";
+import { getPokemonPlacehoder } from "../../utils/Util";
 
 const API_URL = 'https://pokeapi.co/api/v2/pokemon/';
-const pokePlaceholder: Pokemon = Util.getPokemonPlacehoder();
+const pokePlaceholder: Pokemon = getPokemonPlacehoder();
 const pokemonMap = new Map<String, Pokemon>();
 
 export const PokemonContext = createContext<PokeProvider | null>(null);

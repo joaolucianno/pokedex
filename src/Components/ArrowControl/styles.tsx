@@ -3,9 +3,13 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   height: 90px;
-  position: relative;
+  position: absolute;
   width: 90px;
   /* border: 1px solid red; */
+
+  // Check Style
+  top: 320px;
+  right: 60px;
 
   .btn {
     background-color: #222;

@@ -1,15 +1,12 @@
 import { useContext } from "react";
 import { PokemonContext } from "../../context/PokemonContext/PokemonContext";
 import { Pokemon } from "../../ts/types/app-types";
+import { formatId } from "../../utils/Util";
 import { Container } from "./styles";
 
 export default function InfoDisplay() {
   const pokemonContext  = useContext(PokemonContext);
   const pokemonSelected: Pokemon | null = pokemonContext && pokemonContext?.pokemonSelected;
-
-  const formatId = (id: string | undefined) => {
-    return id?.length === 1 ? `0${id}` : id;
-  }
 
   return (
     <Container>

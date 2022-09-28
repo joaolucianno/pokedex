@@ -11,8 +11,13 @@ export const Container = styled.div`
   height: 245px;
   padding-inline: 20px;
   position: relative;
-  /* width: 260px; */
   width: 300px;
+
+  // Check style
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
 
 
   .screen-header, .screen-footer {
@@ -34,14 +39,21 @@ export const Container = styled.div`
     -moz-border-radius: 15px;
     -o-border-radius: 15px;
     display: flex;
+    flex-direction: column;
+    gap: 4px;
     height: 175px;
     justify-content: center;
     width: 100%;
-    
 
+    .title {
+      font-family: 'VT323', monospace;
+      font-size: 24px;
+      text-transform: capitalize;
+    }
+    
     img {
-      width: 90%;
-      height: 90%;
+      width: 75%;
+      height: 75%;
       object-fit: contain;
       -webkit-touch-callout: none;
     }
