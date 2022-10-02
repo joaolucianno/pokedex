@@ -1,11 +1,15 @@
-import { useContext } from "react";
+import { useContext, FC } from "react";
 import { PokemonContext } from "../../context/PokemonContext/PokemonContext";
 import { formatId } from "../../utils/Util";
 import { Container } from "./styles";
 
+type ScreenProps = {
+  className?: string
+}
+
 const sound = new Audio('https://play.pokemonshowdown.com/audio/cries/pikachu.mp3');
 
-export default function Screen() {
+export const Screen: FC<ScreenProps> = ({ className }) => {
   const pokemonContext = useContext(PokemonContext);
   const pokemon = pokemonContext && pokemonContext.pokemonSelected;
 
@@ -18,7 +22,7 @@ export default function Screen() {
   }
 
   return (
-    <Container>
+    <Container className={className}>
       <div className="screen-header">
         <div className="small-btn"></div>
         <div className="small-btn"></div>

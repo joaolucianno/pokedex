@@ -8,14 +8,8 @@ export const Container = styled.div`
   border-radius: 5px;
   display: inline-flex;
   gap: 5px;
-  max-width: 260px;
+  max-width: 280px;
   padding: 5px;
-
-  // Check Style
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
 
   .pokemon-name {
     border: none;
@@ -23,6 +17,7 @@ export const Container = styled.div`
     font-family: 'VT323', monospace;
     font-size: 22px;
     padding: 10px;
+    width: 100%;
 
     :focus-visible {
       outline: none;

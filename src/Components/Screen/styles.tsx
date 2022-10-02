@@ -11,14 +11,7 @@ export const Container = styled.div`
   height: 245px;
   padding-inline: 20px;
   position: relative;
-  width: 300px;
-
-  // Check style
-  position: absolute;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-
+  width: 280px;
 
   .screen-header, .screen-footer {
     display: flex;
