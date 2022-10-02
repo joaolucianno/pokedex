@@ -1,7 +1,7 @@
 {
   "name": "pokedex",
   "version": "0.1.0",
-  "homepage": "https://joaolucianno.github.io/pokedex",
+  "homepage": "https://{username}.github.io/",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
