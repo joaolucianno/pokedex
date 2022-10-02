@@ -46,6 +46,7 @@ export const Search: FC<SearchProps> = ({ className }) => {
     valueSearched?.addEventListener('keyup', handleKeyEnter);
     
     return () => {valueSearched?.removeEventListener('keyup', handleKeyEnter)};
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

@@ -1,5 +1,4 @@
 import ArrowControl from "../ArrowControl/ArrowControl";
-import { InfoDisplay } from "../InfoDisplay/InfoDisplay";
 import { Screen } from "../Screen/Screen";
 import { Search } from "../Search/Search";
 import { Container } from "./styles";
@@ -39,9 +38,6 @@ export default function Layout() {
           </div>
           <Search className="search" />
         </div>
-        {/* <InfoDisplay /> */}
-        {/* <ArrowControl /> */}
-        {/* <Search /> */}
       </div>
     </Container>
   );
