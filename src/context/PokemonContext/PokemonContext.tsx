@@ -15,7 +15,7 @@ export const PokemonProvider = ({ children }: any) => {
   const [pokemonSelected, setPokemonSelected] = useState<Pokemon | null>(null);
   const isSearchByName = useRef<boolean>(false);
   const isSearchByNumber = useRef<boolean>(false);
-  const isMounted = useRef<boolean>(true);
+  const isMounted = useRef<boolean>(false);
 
   const handlePlusSelector = useCallback(() => {
     isSearchByNumber.current = true;
@@ -56,6 +56,7 @@ export const PokemonProvider = ({ children }: any) => {
     setPokemonSelected(pokemon);
   }
 
+  /** Search by id */
   useEffect(() => {
     const pokemonFromMap = getPokemonFromMap(selector.toString());
     if (pokemonFromMap) {
@@ -68,24 +69,38 @@ export const PokemonProvider = ({ children }: any) => {
         console.error(error);
         setPokemonNotFound();
       }).finally(() => {
-        isMounted.current = false;
         isSearchByNumber.current = false;
       });
     }
+    isMounted.current = true;
   }, [selector]);
 
+  /** Search by name */
   useEffect(() => {
     if (isSearchByName.current) {
-      fetchPokemon(pokemonWanted).then((response) => {
-        setPokemon(response);
-        setSelector(response.id);
-      }).catch((error) => {
-        console.error(error);
-        setPokemonNotFound();
-      }).finally(() => {
-        isSearchByName.current = false;
-        setPokemonWanted('');
+      let pokemonFromMap: Pokemon;
+
+      pokemonMap.forEach((pokemon: Pokemon) => {
+        if (pokemon.name === pokemonWanted) {
+          pokemonFromMap = pokemon;
+        }
       });
+
+      if (pokemonFromMap) {
+        setPokemonSelected(pokemonFromMap);
+        setSelector(Number(pokemonFromMap?.id));
+      } else {
+        fetchPokemon(pokemonWanted).then((response) => {
+          setPokemon(response);
+          setSelector(response.id);
+        }).catch((error) => {
+          console.error(error);
+          setPokemonNotFound();
+        }).finally(() => {
+          isSearchByName.current = false;
+          setPokemonWanted('');
+        });
+      }
     }
   }, [pokemonWanted]);
 
