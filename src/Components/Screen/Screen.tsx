@@ -7,19 +7,9 @@ type ScreenProps = {
   className?: string
 }
 
-const sound = new Audio('https://play.pokemonshowdown.com/audio/cries/pikachu.mp3');
-
 export const Screen: FC<ScreenProps> = ({ className }) => {
   const pokemonContext = useContext(PokemonContext);
   const pokemon = pokemonContext && pokemonContext.pokemonSelected;
-
-  const handlePlayClick = () => {
-    sound.play();
-  }
-
-  const handleStopClick = () => {
-    sound.pause();
-  }
 
   return (
     <Container className={className}>
@@ -33,8 +23,7 @@ export const Screen: FC<ScreenProps> = ({ className }) => {
       </div>
       <div className="screen-footer">
         <div className="sound-controls">
-          <div className="big-btn" onClick={handlePlayClick}></div>
-          <div className="big-btn" onClick={handleStopClick}></div>
+          <div className="big-btn"></div>
         </div>
         <div className="speaker">
           <div className="sp"></div>

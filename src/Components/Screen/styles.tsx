@@ -73,24 +73,7 @@ export const Container = styled.div`
     width: 26px;
 
     :first-child {
-      margin-left: 25px;
-
-      ::after {
-        content: "";
-        background: -moz-linear-gradient(top, #c00d0d 0%, #8b0000 80%);
-        background: -o-linear-gradient(top, #c00d0d 0%, #8b0000 80%);
-        background: -webkit-linear-gradient(top, #c00d0d 0%, #8b0000 80%);
-        background: linear-gradient(top, #c00d0d 0%, #8b0000 80%);
-        border-bottom: 5px solid transparent;
-        border-left: 10px solid #fff;
-        border-top: 5px solid transparent;
-        height: 0;
-        left: 54%;
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 0;
-      }
+      margin-left: 12px;
     }
 
     :nth-child(2) {
