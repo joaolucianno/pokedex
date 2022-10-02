@@ -14,7 +14,7 @@ export const PokemonProvider = ({ children }: any) => {
   const [pokemonWanted, setPokemonWanted] = useState<string>('');
   const [pokemonSelected, setPokemonSelected] = useState<Pokemon | null>(null);
   const isSearchByName = useRef<boolean>(false);
-  const isSearchByNumber = useRef<boolean>(false);
+  const isSearchByNumber = useRef<boolean>(true);
   const isMounted = useRef<boolean>(false);
 
   const handlePlusSelector = useCallback(() => {
@@ -64,6 +64,7 @@ export const PokemonProvider = ({ children }: any) => {
       isSearchByNumber.current = false;
     } else if ((isSearchByNumber.current || isMounted.current)) {
       fetchPokemon(selector).then((response) => {
+        console.log(response);
         setPokemon(response);
       }).catch((error) => {
         console.error(error);
@@ -72,6 +73,7 @@ export const PokemonProvider = ({ children }: any) => {
         isSearchByNumber.current = false;
       });
     }
+    isSearchByNumber.current = false;
     isMounted.current = true;
   }, [selector]);
 
