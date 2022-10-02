@@ -1,15 +1,12 @@
 {
   "name": "pokedex",
   "version": "0.1.0",
-  "homepage": "https://joaolucianno.github.io/pokedex",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "@emotion/react": "^11.10.4",
@@ -45,7 +42,6 @@
     ]
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.26",
-    "gh-pages": "^4.0.0"
+    "@types/styled-components": "^5.1.26"
   }
 }
