@@ -248,6 +248,7 @@ export const Container = styled.div`
 
       .footer {
         align-items: center;
+        padding: 0;
         padding-top: 40px;
 
         .btns {
@@ -255,7 +256,7 @@ export const Container = styled.div`
         }
 
         .search {
-          max-width: 262px;
+          width: 300px;
         }
       }
 
