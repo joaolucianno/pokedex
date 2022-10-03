@@ -64,7 +64,6 @@ export const PokemonProvider = ({ children }: any) => {
       isSearchByNumber.current = false;
     } else if ((isSearchByNumber.current || isMounted.current)) {
       fetchPokemon(selector).then((response) => {
-        console.log(response);
         setPokemon(response);
       }).catch((error) => {
         console.error(error);

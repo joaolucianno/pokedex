@@ -1,5 +1,15 @@
 import styled from "styled-components";
 
+const documentHeight = () => {
+  console.log('object');
+  const doc = document.documentElement;
+  doc.style.setProperty('--doc-height', `${window.innerHeight}px`);
+  return `${window.innerHeight}px`;
+};
+
+window.addEventListener('resize', documentHeight);
+documentHeight();
+
 
 export const Container = styled.div`
   margin: 50px;
@@ -216,19 +226,30 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     margin: 0;
-    margin-left: 8px;
-    margin-top: 20px;
+    margin-left: 0;
 
     .left-side {
-      width: 350px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      box-shadow: none;
+      grid-template-rows: 130px 1fr 1fr;
+      height: var(--doc-height);
+      width: 100vw;
 
       .content {
+        display: flex;
+        justify-content: center;
+
         .screen {
+          left: 0;
           width: 264px;
         }
       }
 
       .footer {
+        align-items: center;
+        padding-top: 40px;
+
         .btns {
           gap: 8px;
         }
@@ -239,7 +260,20 @@ export const Container = styled.div`
       }
 
       .curve1 {
-        width: 161px;
+        border-top-left-radius: 0;
+        -webkit-border-top-left-radius: 0;
+        -moz-border-top-left-radius: 0;
+        -o-border-top-left-radius: 0;
+        box-shadow: none;
+        width: 186px;
+      }
+
+      .curve2 {
+        border-top-left-radius: 110px 60px;
+
+        .connection {
+          display: none;
+        }
       }
     }
   }
