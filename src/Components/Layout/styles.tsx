@@ -242,7 +242,7 @@ export const Container = styled.div`
 
         .screen {
           left: 0;
-          width: 264px;
+          width: 300px;
         }
       }
 
