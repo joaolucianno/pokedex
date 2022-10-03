@@ -234,6 +234,7 @@ export const Container = styled.div`
       box-shadow: none;
       grid-template-rows: 130px 1fr 1fr;
       height: var(--doc-height);
+      min-width: 300px;
       width: 100vw;
 
       .content {
