@@ -266,7 +266,7 @@ export const Container = styled.div`
         -moz-border-top-left-radius: 0;
         -o-border-top-left-radius: 0;
         box-shadow: none;
-        width: 186px;
+        width: calc(100vw - 188px);
       }
 
       .curve2 {
