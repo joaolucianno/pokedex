@@ -1,10 +1,8 @@
 import styled from "styled-components";
 
 const documentHeight = () => {
-  console.log('object');
   const doc = document.documentElement;
   doc.style.setProperty('--doc-height', `${window.innerHeight}px`);
-  return `${window.innerHeight}px`;
 };
 
 window.addEventListener('resize', documentHeight);

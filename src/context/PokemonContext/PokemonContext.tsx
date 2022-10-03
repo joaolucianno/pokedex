@@ -78,7 +78,7 @@ export const PokemonProvider = ({ children }: any) => {
 
   /** Search by name */
   useEffect(() => {
-    if (isSearchByName.current) {
+    if (isSearchByName.current && pokemonWanted) {
       let pokemonFromMap: Pokemon;
 
       pokemonMap.forEach((pokemon: Pokemon) => {
@@ -90,6 +90,8 @@ export const PokemonProvider = ({ children }: any) => {
       if (pokemonFromMap) {
         setPokemonSelected(pokemonFromMap);
         setSelector(Number(pokemonFromMap?.id));
+        setPokemonWanted('');
+        isSearchByName.current = false;
       } else {
         fetchPokemon(pokemonWanted).then((response) => {
           setPokemon(response);
