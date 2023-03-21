@@ -1,4 +1,5 @@
 import ArrowControl from "../ArrowControl/ArrowControl";
+import { InfoDisplay } from "../InfoDisplay/InfoDisplay";
 import { Screen } from "../Screen/Screen";
 import { Search } from "../Search/Search";
 import { Container } from "./styles";
@@ -37,6 +38,14 @@ export default function Layout() {
             <ArrowControl />
           </div>
           <Search className="search" />
+        </div>
+      </div>
+      <div className="right-side">
+        <div className="header"></div>
+        <div className="curve1"></div>
+        <div className="curve2"></div>
+        <div className="content">
+          <InfoDisplay className="info-display" />
         </div>
       </div>
     </Container>

@@ -107,8 +107,8 @@ export const PokemonProvider = ({ children }: any) => {
     }
   }, [pokemonWanted]);
 
-  if (pokemonSelected === null) {
-    return <></>;
+  if (!pokemonSelected) {
+    return null;
   }
 
   return (

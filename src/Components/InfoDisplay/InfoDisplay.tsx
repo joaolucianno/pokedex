@@ -24,16 +24,14 @@ export const InfoDisplay: FC<InfoDisplayProps> = ({ className }) => {
         <div>
           <b>Type: </b> 
           <span style={{textTransform: 'capitalize'}}>
-            {pokemonSelected?.type.map((type, index) => {
-              return pokemonSelected?.type.length - 1 === index ? `${type}` : `${type} | `
-            })}
+            { pokemonSelected?.type?.join(' | ') || '--' }
           </span>
         </div>
         <div>
-          <b>Height:</b> {pokemonSelected?.height}m
+          <b>Height:</b> {pokemonSelected?.height ? pokemonSelected?.height + 'm' : '--'}
         </div>
         <div>
-          <b>Weight:</b> {pokemonSelected?.weight}kg
+          <b>Weight:</b> {pokemonSelected?.weight ? pokemonSelected?.height + 'kg' : '--'}
         </div>
         <br />
       </div>
