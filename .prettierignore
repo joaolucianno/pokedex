@@ -1,0 +1,9 @@
+# Folders
+**/node_modules/
+**/coverage/
+**/dist/
+**/.out/
+reports/
+
+# Files
+**/*.css.d.ts
