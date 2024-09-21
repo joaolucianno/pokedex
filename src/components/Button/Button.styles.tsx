@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const Button = styled.button`
+export const Container = styled.button`
   align-items: center;
   background: #222;
   border-radius: 5px;
