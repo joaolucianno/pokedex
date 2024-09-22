@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.input`
+  border: none;
   border-radius: 5px;
   font-family: 'VT323', monospace;
   font-size: 22px;
@@ -11,7 +12,7 @@ export const Container = styled.input`
     outline: none;
   }
 
-  .input-error {
+  &.input-error {
     outline: 2px solid #f00;
 
     :focus-visible {

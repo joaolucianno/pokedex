@@ -8,7 +8,7 @@ function App() {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
       <Display title='Pokedex' />
       <Button icon={SearchIcon} onClick={() => console.log('Click')} />
-      <InputText placeholder='Enter a Pokemon...' style={{ border: '1px solid #000' }} />
+      <InputText placeholder='Enter a Pokemon...' />
     </div>
   );
 }
